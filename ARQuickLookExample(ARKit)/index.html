@@ -9,14 +9,24 @@
 	
 <body>
 	
-	<audio controls autoplay loop>
+	<audio id="myAudio">
   		<source src="AxelF.wav" type="audio/mpeg">
 	</audio>
-	
-	
-	<a rel="ar" href="./CesiumMan.usdz">
+
+	<a onClick="playAudio()" rel="ar" href="./CesiumMan.usdz">
 		<img src="frog.jpg">
 	</a>
+	
+	<script>
+		
+		var x = document.getElementById("myAudio"); 
+
+		function playAudio() 
+		{ 
+    		x.play(); 
+		}
+		
+	</script>
 	
 	
 </body>
