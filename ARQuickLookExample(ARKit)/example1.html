@@ -1,0 +1,34 @@
+<html>
+	
+<head>
+
+	<title>QuickLookARExample</title>
+	
+ 	
+</head>
+	
+<body>
+	
+	<audio id="myAudio">
+  		<source src="AxelF.wav" type="audio/mpeg">
+	</audio>
+
+	<a onClick="playAudio()" rel="ar" href="./monster.usdz">
+		<img src="frog.jpg">
+	</a>
+	
+	<script>
+		
+		var x = document.getElementById("myAudio"); 
+
+		function playAudio() 
+		{ 
+    		x.play(); 
+		}
+		
+	</script>
+	
+	
+</body>
+
+</html>
