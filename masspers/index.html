@@ -9,7 +9,7 @@
 	
 <body>
 
-	<a id="Img" onClick="playAudio()" rel="ar" href="#">
+	<a id="Img" onClick="playAudio()" rel="ar" href=" ">
 		<img id="myPhoto" src="frog.jpg">
 	</a>
 	
@@ -20,8 +20,7 @@
 		var url = new URL(url_string);
 		var c = url.searchParams.get("user_id");
 		
-		//var audio = new Audio(c+'audio.ogg');
-		var audio = new Audio(c+'audio.mp3');
+		var audio = new Audio("audio/"+c+"audio.mp3");
 		//audio.play();
 		
 		
