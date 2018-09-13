@@ -9,7 +9,7 @@
 	
 <body>
 
-	<a onClick="playAudio()" rel="ar" href="./ShadingTest01.usdz">
+	<a id="Img" onClick="playAudio()" rel="ar" href="./ShadingTest01.usdz">
 		<img id="myPhoto" src="frog.jpg">
 	</a>
 	
@@ -24,15 +24,16 @@
 		var audio = new Audio(c+'audio.mp3');
 		//audio.play();
 		
+		
 		document.getElementById("myPhoto").src = c+"photo.png";
+		
+		document.getElementById("Img").href = "usdz/PersonalModel_"+c+".usdz";
 		
 		function playAudio() 
 		{ 
     		audio.play();
 		}
 		
-		
-				
 		
 	</script>
 	
