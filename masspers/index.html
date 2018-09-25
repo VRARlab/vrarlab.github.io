@@ -20,13 +20,16 @@
 		var url = new URL(url_string);
 		var c = url.searchParams.get("user_id");
 		
-		var audio = new Audio("audio/"+c+"audio.mp3");
+		//var audio = new Audio("audio/"+c+"audio.mp3");
+		var audio = new Audio("audio/4audio.mp3");
 		//audio.play();
 		
 		
-		document.getElementById("myPhoto").src = "photo/"+c+"photo.png";
+		//document.getElementById("myPhoto").src = "photo/"+c+"photo.png";
+		document.getElementById("myPhoto").src = "photo/ui.png";
 		
-		document.getElementById("Img").href = "usdz/PersonalModel_"+c+".usdz";
+		//document.getElementById("Img").href = "usdz/PersonalModel_"+c+".usdz";
+		document.getElementById("Img").href = "usdz/SuperFinalModel.usdz";
 		
 		function playAudio() 
 		{ 
