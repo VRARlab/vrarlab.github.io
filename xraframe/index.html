@@ -57,29 +57,6 @@
         },
         init: function(){
           this.camera = document.getElementById('camera')
-          this.contents = document.getElementById('portal-contents')
-          this.walls = document.getElementById('hider-walls')
-          this.portalWall = document.getElementById('portal-wall')
-          this.portalWorld = document.getElementById('portal-world')
-          this.isInPortalSpace = false
-          this.wasOutside = true
-        },
-        tick: function() {
-          const position = this.camera.object3D.position
-
-          const isOutside = position.z  > this.data.depth / 2
-          const withinPortalBounds = position.y < this.data.height && Math.abs(position.x) < this.data.width / 2
-
-          if (this.wasOutside != isOutside && withinPortalBounds) {
-            this.isInPortalSpace = !isOutside
-          }
-
-          this.contents.object3D.visible = this.isInPortalSpace || isOutside
-          this.walls.object3D.visible = !this.isInPortalSpace && isOutside
-          this.portalWall.object3D.visible = this.isInPortalSpace && !isOutside
-          this.portalWorld.object3D.visible = this.isInPortalSpace
-
-          this.wasOutside = isOutside
         }
       })
 
@@ -117,7 +94,7 @@
       <!-- We can define assets here to be loaded when A-Frame initializes -->
       <a-assets>
         <!-- Credit to Poly by Google for the model: https://poly.google.com/view/0fVRHo65E-j -->
-        <a-asset-item id="unicornModel" src="unicorn.glb"></a-asset-item>
+        <a-asset-item id="unicornModel" src="tree.glb"></a-asset-item>
       </a-assets>
 
       <a-camera
@@ -125,90 +102,7 @@
         position="0 5 8">
       </a-camera>
 
-      <!-- Doorway -->
-      <a-box
-        scale="1 6 1"
-        position="-2.5 3 0"
-        color="cyan"></a-box>
-      <a-box
-        scale="1 6 1"
-        position="2.5 3 0"
-        color="cyan"></a-box>
-      <a-box
-        scale="6 1 1"
-        position="0 6.5 0"
-        color="cyan"></a-box>
-
-      <!-- Hider walls -->
-      <a-entity id="hider-walls">
-        <a-box
-          scale="6 100 1"
-          position="0 57 0"
-          hider-material></a-box>
-        <a-box
-          scale="94 100 1"
-          position="-50 50 0"
-          hider-material></a-box>
-        <a-box
-          scale="94 100 1"
-          position="50 50 0"
-          hider-material></a-box>
-        <a-box
-          scale="200 100 1"
-          position="0 50 200"
-          hider-material></a-box>
-        <a-box
-          scale="200 1 201"
-          position="0 100 100"
-          hider-material></a-box>
-        <a-box
-          scale="200 1 199"
-          position="0 -0.5 100"
-          hider-material></a-box>
-        <a-box
-          scale="1 100 200"
-          position="-100 50 100"
-          hider-material></a-box>
-        <a-box
-          scale="1 100 200"
-          position="100 50 100"
-          hider-material></a-box>
-      </a-entity>
-
-      <a-entity id="portal-wall">
-        <a-plane
-          scale="4 6 1"
-          rotation="180 0 0"
-          position="0 3 0.5"
-          hider-material></a-plane>
-      </a-entity>
-
-      <a-entity id="portal-contents">
-        <a-entity
-          scale="0.3 0.3 0.3"
-          position="0 0 -7"
-          gltf-model="#unicornModel"></a-entity>
-        <a-sky color="#6EBAA7"></a-sky>
-        <a-box
-          scale="200 1 100"
-          position="0 -0.5 -49.5"
-          color="blue"></a-box>
-      </a-entity>
-
-      <a-entity id="portal-world">
-        <a-box
-          scale="200 1 100"
-          position="0 -0.5 49.5"
-          color="blue"></a-box>
-      </a-entity>
-
-      <a-entity
-        id="ground"
-        geometry="primitive: box"
-        material="opacity: 0"
-        scale="1000 2 1000"
-        position="0 -1 0">
-      </a-entity>
+      
     </a-scene>
   </body>
 </html>
