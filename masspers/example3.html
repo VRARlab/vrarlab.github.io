@@ -1,0 +1,67 @@
+<html>
+	
+<head>
+
+	<title>QuickLookARExample</title>
+	
+ 	
+</head>
+	
+<body>
+	<!--
+<p>&nbsp;</p>
+<p>&nbsp;</p>-->
+	
+	
+	<div class="parent">
+		
+      <!--<p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>-->
+      <p><a onClick="playAudio()" rel="ar" href="usdz/SuperFinalModel.usdz" >  OPEN USDZ  </a></p>
+	
+	</div>
+		
+		
+	
+	
+<script>
+		
+		//var userLang = navigator.language || navigator.userLanguage; 
+		//alert ("The language is: " + userLang);
+		
+		
+		var url_string = window.location.href;
+		var url = new URL(url_string);
+		var c = url.searchParams.get("user_id");
+		
+		//var audio = new Audio("audio/"+c+"audio.mp3");
+		var audio = new Audio("audio/4audio.mp3");
+		//audio.play();
+		
+		
+		//document.getElementById("myPhoto").src = "photo/"+c+"photo.png";
+		//document.getElementById("myPhoto").src = "photo/ui.png";
+		
+		//document.getElementById("Img").href = "usdz/PersonalModel_"+c+".usdz";
+		//document.getElementById("Img").href = "usdz/SuperFinalModel.usdz";
+		
+		function playAudio() 
+		{ 
+    		audio.play();
+		}
+		
+		
+	</script>
+	
+<style>
+  
+  .parent {
+   margin-top: 20%; /* Отступы вокруг элемента */
+  }
+
+ </style>
+	
+</body>
+
+</html>
